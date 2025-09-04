@@ -1,5 +1,5 @@
-name: Amsterdams Chemisch Dispuut
-description: Several utilities and custom pages for acdweb.nl.
+name: S3 Gallery
+description: acdweb.nl S3 Gallery
 package: Custom
 
 type: module
