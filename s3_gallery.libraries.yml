@@ -1,0 +1,9 @@
+fslightbox:
+  version: 3.4.2
+  js:
+    js/fslightbox.js: {}
+  css:
+    theme:
+      css/custom.css: {}
+  dependencies:
+    - core/jquery

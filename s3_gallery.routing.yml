@@ -1,0 +1,14 @@
+s3_gallery.photos_gallery:
+  path: '/photos/{prefix}'
+  defaults:
+    _controller: '\Drupal\s3_gallery\Controller\GalleryController::myPage'
+    _title_callback: '\Drupal\s3_gallery\Controller\GalleryController::getTitle'
+    prefix: ''
+  requirements:
+    _permission: 'access content'
+    prefix: '.*'
+  options:
+    parameters:
+      prefix:
+        type: 'string'
+        default: ''

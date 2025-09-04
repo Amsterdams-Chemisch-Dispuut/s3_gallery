@@ -1,0 +1,27 @@
+<?php
+/**
+ * @file
+ * Contains theme and help hooks for the TARDIS module.
+ */
+
+ use Drupal\Core\Routing\RouteMatchInterface;
+/**
+ * Implements hook_theme().
+ */
+function s3_gallery_theme($existing, $type, $theme, $path) {
+  return [
+    'album' => [
+      'variables' => [
+        'images' => [],
+      ],
+      'template' => 'album',
+    ],
+    'displays' => [
+      'file' => 's3_gallery.theme.inc',
+    ],
+  ];
+}
+
+if (\Drupal::hasContainer()) {
+    \Drupal::moduleHandler()->loadInclude('s3_gallery', 'inc', 's3_gallery.theme');
+}

@@ -1,0 +1,6 @@
+services:
+  aws.s3_client:
+    class: Aws\S3\S3Client
+    factory: ['Aws\S3\S3Client', 'factory']
+  s3_gallery.gallery_controller:
+    class: Drupal\s3_gallery\Controller\GalleryController

@@ -1,0 +1,10 @@
+name: Amsterdams Chemisch Dispuut
+description: Several utilities and custom pages for acdweb.nl.
+package: Custom
+
+type: module
+core_version_requirement: ^10.3 || ^11
+
+dependencies:
+  - drupal:link
+  - drupal:views
