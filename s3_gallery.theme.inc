@@ -4,7 +4,7 @@
  * @file
  * Theming for TARDIS views.
  */
-function template_preprocess_views_view_displays(&$variables) {
+function s3_gallery_preprocess_views_view_displays(&$variables) {
   // View options set by the user.
   $options = $variables['view']->style_plugin->options;
 
