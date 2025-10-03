@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Contains theme and help hooks for the S3 Gallery module.
+ * Contains theme and help hooks for the TARDIS module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
+ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_theme().
  */
@@ -19,14 +19,9 @@ function s3_gallery_theme($existing, $type, $theme, $path) {
     'displays' => [
       'file' => 's3_gallery.theme.inc',
     ],
-    'page__scherm' => [
-      'render element' => 'page',
-      'template' => 'page--scherm',
-      'path' => drupal_get_path('module', 's3_gallery') . '/templates',
-    ],
   ];
 }
 
 if (\Drupal::hasContainer()) {
-  \Drupal::moduleHandler()->loadInclude('s3_gallery', 'inc', 's3_gallery.theme');
+    \Drupal::moduleHandler()->loadInclude('s3_gallery', 'inc', 's3_gallery.theme');
 }
