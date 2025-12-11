@@ -65,7 +65,7 @@ class GalleryController extends ControllerBase {
         ],
       ]);
 
-      $bucket = 'acdweb-storage';
+      $bucket = $config['bucket'];
       $prefix = 'photos/';
 
       // Print the current prefix
@@ -167,7 +167,7 @@ class GalleryController extends ControllerBase {
         ],
       ]);
 
-      $bucket = 'acdweb-storage';
+      $bucket = $config['bucket'];
       $prefix = 'photos/' . urldecode($prefix); // Ensure 'photos/' is prefixed and decode the prefix
       // $expires = '+10 minutes';
 
