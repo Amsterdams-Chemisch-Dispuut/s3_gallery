@@ -11,10 +11,15 @@
 function s3_gallery_theme($existing, $type, $theme, $path) {
   return [
     'album' => [
-      'variables' => [
-        'images' => [],
-      ],
+      'variables' => ['images' => []],
       'template' => 'album',
+    ],
+    // Add this new hook
+    'gallery_home' => [
+      'variables' => [
+        'years' => [],
+      ],
+      'template' => 'gallery-home',
     ],
     'displays' => [
       'file' => 's3_gallery.theme.inc',

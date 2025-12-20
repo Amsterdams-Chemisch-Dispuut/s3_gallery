@@ -1,0 +1,35 @@
+{# gallery-home.html.twig #}
+<div class="s3-gallery-main">
+  <p>Welkom op de fotopagina van het ACD. Hier staan (hopelijk) de foto’s van ACD-activiteiten. Wil je een foto downloaden? Dat kan zeker, maar let erop dat je eerst de foto selecteert voordat je deze downloadt, anders download je een foto van lage kwaliteit. Kom je toevallig een foto tegen die je liever niet op de website wil? Dan kan je mailen naar <a href="mailto:bestuur@acdweb.nl" target="_blank" >bestuur@acdweb.nl</a> en zal de foto zo snel mogelijk verwijderd worden.</p>
+  {% for year, albums in years %}
+    <h2 class="mt-5 mb-4 border-bottom pb-2">{{ year }}</h2>
+    <div class="row">
+      {% for album in albums %}
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="card h-100 shadow-sm album-card">
+            <a href="{{ album.url }}" class="text-decoration-none text-dark">
+              {% if album.preview %}
+                {# Using wsrv.nl for fast thumbnails #}
+                <img src="//wsrv.nl/?url={{ album.preview }}&w=400&h=300&fit=cover&output=webp" 
+                     class="card-img-top" 
+                     alt="{{ album.title }}"
+                     loading="lazy">
+              {% else %}
+                <div class="bg-light d-flex align-items-center justify-content-center" style="height: 150px;">
+                  <span class="text-muted">No Preview</span>
+                </div>
+              {% endif %}
+              <div class="card-body p-2 text-center">
+                <p class="card-text small fw-bold">{{ album.title }}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .album-card:hover { transform: translateY(-3px); transition: 0.2s; }
+</style>
