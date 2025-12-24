@@ -10,19 +10,16 @@
  */
 function s3_gallery_theme($existing, $type, $theme, $path) {
   return [
-    'album' => [
-      'variables' => ['images' => []],
-      'template' => 'album',
-    ],
-    // Add this new hook
+    // ... your existing hooks ...
     'gallery_home' => [
-      'variables' => [
-        'years' => [],
-      ],
-      'template' => 'gallery-home',
+      'variables' => ['years' => NULL],
     ],
-    'displays' => [
-      'file' => 's3_gallery.theme.inc',
+    'album' => [
+      'variables' => ['images' => NULL],
+    ],
+    // ADD THIS NEW ONE:
+    'gallery-block' => [
+      'variables' => ['albums' => NULL],
     ],
   ];
 }

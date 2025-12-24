@@ -17,7 +17,7 @@ class GalleryController extends ControllerBase {
    */
   public function getTitle($prefix = '') {
     if (empty($prefix)) {
-      return 'Photo Gallery';
+      return 'Fotoboek';
     }
     $date = date_create(substr($prefix, 0, 8));
     $title = substr($prefix, 8);
@@ -32,7 +32,7 @@ class GalleryController extends ControllerBase {
   public function mainPage() {
     if (\Drupal::currentUser()->isAnonymous()) {
       return [
-        '#markup' => t('Access denied. Please log in to view this page.'),
+        '#markup' => t('Access denied. Please <a href="https://acdweb.nl/user/login">log in</a> to view this page.'),
         '#cache' => ['max-age' => 0],
       ];
     }
