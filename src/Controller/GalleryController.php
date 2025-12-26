@@ -6,6 +6,8 @@ use Drupal\Core\Controller\ControllerBase;
 use Aws\S3\S3Client;
 use Drupal\Core\Site\Settings;
 use Symfony\Component\HttpFoundation\Request;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Provides route responses for the S3 Gallery module.
@@ -31,10 +33,11 @@ class GalleryController extends ControllerBase {
    */
   public function mainPage() {
     if (\Drupal::currentUser()->isAnonymous()) {
-      return [
-        '#markup' => t('Access denied. Please <a href="https://acdweb.nl/user/login">log in</a> to view this page.'),
-        '#cache' => ['max-age' => 0],
-      ];
+      $login_url = Url::fromRoute('user.login', [], [
+        'query' => \Drupal::destination()->getAsArray(),
+      ]);
+
+      return new RedirectResponse($login_url->toString());
     }
 
     try {
@@ -71,10 +74,11 @@ class GalleryController extends ControllerBase {
    */
   public function myPage($prefix = '') {
     if (\Drupal::currentUser()->isAnonymous()) {
-      return [
-        '#markup' => t('Access denied. Please log in to view this page.'),
-        '#cache' => ['max-age' => 0],
-      ];
+      $login_url = Url::fromRoute('user.login', [], [
+        'query' => \Drupal::destination()->getAsArray(),
+      ]);
+
+      return new RedirectResponse($login_url->toString());
     }
 
     try {
