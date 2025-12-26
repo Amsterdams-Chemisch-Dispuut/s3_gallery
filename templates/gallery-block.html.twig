@@ -21,10 +21,11 @@
           <div class="card h-100 shadow-sm album-card">
             <a href="{{ album.url }}" class="text-decoration-none text-dark">
               {% if album.preview %}
-                <img src="//wsrv.nl/?url={{ album.preview }}&w=400&h=300&fit=cover&output=webp" 
+                <img src="//wsrv.nl/?url={{ album.preview }}&w=300&h=200&fit=cover&output=webp" 
                      class="card-img-top" 
                      alt="{{ album.title }}"
-                     loading="lazy">
+                     loading="lazy"
+                     style="width: 100%; aspect-ratio: 3/2; object-fit: scale-down;">
               {% else %}
                 <div class="bg-light d-flex align-items-center justify-content-center" style="height: 150px;">
                   <span class="text-muted small">No Preview</span>

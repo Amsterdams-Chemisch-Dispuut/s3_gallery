@@ -4,7 +4,7 @@
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4 masonry-item">
       <div class="gallery-card">
         <a data-fslightbox="gallery" href="//wsrv.nl/?url={{ url }}&w=2000&output=webp">
-          <img src="//wsrv.nl/?url={{ url }}&w=600&output=webp" 
+          <img src="//wsrv.nl/?url={{ url }}&w=300&h=200&fit=cover&output=webp" 
                class="gallery-img" 
                loading="lazy" 
                alt="Gallery Image">
@@ -39,9 +39,11 @@
 
 /* 3. The Image Styling */
 .gallery-img {
-  width: 100%;
+  width: 100%;             /* Fill the card width */
+  aspect-ratio: 3 / 2;     /* Force a standard landscape shape (like 300x200) */
+  object-fit: scale-down;  [cite_start]/* [cite: 7] Don't stretch small images; contain large ones */
+  object-position: center; /* Center the image in the box */
   display: block;
-  height: auto;
   transition: transform 0.6s ease;
 }
 
