@@ -3,7 +3,7 @@
   {% for url in images %}
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4 masonry-item">
       <div class="gallery-card">
-        <a data-fslightbox="gallery" href="//wsrv.nl/?url={{ url }}&w=2000&output=webp">
+        <a data-fslightbox="gallery" href="//wsrv.nl/?url={{ url }}&w=2000&output=webp" data-download-url="{{ url }}">
           <img src="//wsrv.nl/?url={{ url }}&w=300&h=200&fit=cover&output=webp" 
                class="gallery-img" 
                loading="lazy" 

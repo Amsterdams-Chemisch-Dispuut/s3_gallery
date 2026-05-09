@@ -2,8 +2,10 @@ fslightbox:
   version: 3.4.2
   js:
     js/fslightbox.js: {}
+    js/fslightbox-download.js: {}
   css:
     theme:
       css/custom.css: {}
   dependencies:
+    - core/drupal
     - core/jquery
